@@ -1,0 +1,17 @@
+name = "after-dark"
+description = "A robust, elegant dark theme"
+license = "MIT"
+homepage = "https://github.com/Keats/after-dark"
+min_version = "0.2"
+
+[extra]
+
+
+[author]
+name = "Vincent Prouillet"
+homepage = "https://vincent.is"
+
+[original]
+author =  "comfusion"
+homepage = "https://comfusion.github.io/after-dark/"
+repo = "https://github.com/comfusion/after-dark"

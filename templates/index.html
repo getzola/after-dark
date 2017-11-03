@@ -1,0 +1,80 @@
+{% import "post_macros.html" as post_macros %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+
+      {% if config.generate_rss %}
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml") }}">
+      {% endif %}
+
+      {% block css %}
+          <link rel="stylesheet" href="{{ get_url(path="site.css") }}">
+      {% endblock css %}
+
+      {% block extra_head %}
+      {% endblock extra_head %}
+    </head>
+
+    <body class="hack dark main container">
+        {% block content %}
+            {% if config.extra.after_dark_menu %}
+                <header>
+                    <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                    {% for item in config.extra.after_dark_menu %}
+                        <a itemprop="url"
+                           class="{% if item.url | replace(from="$BASE_URL", to=config.base_url) == current_url %}active{% endif %}"
+                           href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) }}">
+                            <span itemprop="name">{{ item.name }}
+                            </span></a>
+                    {% endfor %}
+                    </nav>
+                </header>
+            {% endif %}
+
+            <main>
+                {% if config.extra.after_dark_title %}
+                    <header>
+                        <h1>{{ config.extra.after_dark_title }}</h1>
+                    </header>
+                {% endif %}
+                {% for page in paginator.pages %}
+                    <article itemscope itemtype="http://schema.org/CreativeWork">
+                        <header>
+                            <h2 itemprop="name">
+                                <a href="{{ page.permalink }}">{{ page.title }}</a>
+                            </h2>
+                            <span class="muted">{{ post_macros::meta(page=page) }}</span>
+                        </header>
+                        {% if page.summary %}
+                            <div itemprop="summary">
+                                {{ page.summary | safe }}
+                                <nav class="readmore"><a itemprop="url" href="{{ page.permalink }}">Read More&nbsp;&raquo;</a></nav>
+                            </div>
+                        {% endif %}
+                    </article>
+                {% endfor %}
+
+                <nav>
+                  <p>
+                    {% if paginator.previous %}
+                      <a href="{{ paginator.previous }}">&laquo; Previous</a> |
+                    {% endif %}
+                    <span>Page {{ paginator.current_index }} of {{ paginator.pagers | length }}</span>
+                    {% if paginator.next %}
+                      | <a href="{{ paginator.next }}">Next &raquo;</a>
+                    {% endif %}
+                  </p>
+                </nav>
+            </main>
+        {% endblock content %}
+    </body>
+
+</html>
