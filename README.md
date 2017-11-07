@@ -43,3 +43,6 @@ site URL.
 The site title is shown on the homepage. As it might be different from the `<title>`
 element that the `title` field in the config represents, you can set the `after_dark_title`
 instead.
+
+## Original
+This template is based on the Hugo template https://github.com/comfusion/after-dark
