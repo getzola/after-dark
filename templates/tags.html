@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block content %}
+    {% block header %}
+        {{ super() }}
+    {% endblock header %}
+
+    <h1>Tags</h1>
+
+    {% if tags %}
+        <ul>
+            {% for tag in tags %}
+                <li><a href="{{ tag.permalink }}">{{ tag.name }}</a> ({{ tag.pages | length }})</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock content %}

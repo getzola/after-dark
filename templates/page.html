@@ -19,6 +19,24 @@
                 {% if config.extra.author %}
                     Published by {{ config.extra.author }}
                 {% endif %}
+                {% if page.category %}
+                    in <a href="{{ get_taxonomy_url(kind="category", name=page.category) }}">{{ page.category }}</a>
+                {% endif %}
+                {% if page.tags %}
+                    and tagged
+                    {% for tag in page.tags %}
+                        <a href="{{ get_taxonomy_url(kind="tag", name=tag) }}">{{ tag }}</a>
+                        {% if page.tags | length > 1 %}
+                            {% if loop.index != page.tags | length %}
+                                {% if loop.index == page.tags | length - 1 %}
+                                    and
+                                {% else %}
+                                    ,
+                                {% endif %}
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
             </p>
         </footer>
     {% endblock page_footer %}

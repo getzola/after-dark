@@ -25,19 +25,21 @@
 
     <body class="hack dark main container">
         {% block content %}
-            {% if config.extra.after_dark_menu %}
-                <header>
-                    <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
-                    {% for item in config.extra.after_dark_menu %}
-                        <a itemprop="url"
-                           class="{% if item.url | replace(from="$BASE_URL", to=config.base_url) == current_url %}active{% endif %}"
-                           href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) }}">
-                            <span itemprop="name">{{ item.name }}
-                            </span></a>
-                    {% endfor %}
-                    </nav>
-                </header>
-            {% endif %}
+            {% block header %}
+                {% if config.extra.after_dark_menu %}
+                    <header>
+                        <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                        {% for item in config.extra.after_dark_menu %}
+                            <a itemprop="url"
+                               class="{% if item.url | replace(from="$BASE_URL", to=config.base_url) == current_url %}active{% endif %}"
+                               href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) }}">
+                                <span itemprop="name">{{ item.name }}
+                                </span></a>
+                        {% endfor %}
+                        </nav>
+                    </header>
+                {% endif %}
+            {% endblock header %}
 
             <main>
                 {% if config.extra.after_dark_title %}
@@ -46,20 +48,7 @@
                     </header>
                 {% endif %}
                 {% for page in paginator.pages %}
-                    <article itemscope itemtype="http://schema.org/CreativeWork">
-                        <header>
-                            <h2 itemprop="name">
-                                <a href="{{ page.permalink }}">{{ page.title }}</a>
-                            </h2>
-                            <span class="muted">{{ post_macros::meta(page=page) }}</span>
-                        </header>
-                        {% if page.summary %}
-                            <div itemprop="summary">
-                                {{ page.summary | safe }}
-                                <nav class="readmore"><a itemprop="url" href="{{ page.permalink }}">Read More&nbsp;&raquo;</a></nav>
-                            </div>
-                        {% endif %}
-                    </article>
+                    {{ post_macros::page_in_list(page=page) }}
                 {% endfor %}
 
                 <nav>
