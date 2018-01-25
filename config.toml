@@ -1,0 +1,16 @@
+base_url = "http://nothing.com"
+compile_sass = true
+title = "after-dark theme"
+description = ""
+
+generate_tags_pages = true
+generate_categories_pages = true
+
+[extra]
+author = "Vincent"
+after_dark_menu = [
+    {url = "$BASE_URL", name = "Home"},
+    {url = "$BASE_URL/categories", name = "Categories"},
+    {url = "$BASE_URL/tags", name = "Tags"},
+]
+after_dark_title = "My blog"
