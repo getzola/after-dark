@@ -16,7 +16,7 @@
       {% endif %}
 
       {% block css %}
-          <link rel="stylesheet" href="{{ get_url(path="site.css") }}">
+          <link rel="stylesheet" href="{{ get_url(path="site.css", trailing_slash=false) }}">
       {% endblock css %}
 
       {% block extra_head %}
