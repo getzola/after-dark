@@ -1,6 +1,6 @@
 # after-dark
 
-![after-dark screenshot](https://raw.githubusercontent.com/Keats/after-dark/master/image.png)
+![after-dark screenshot](https://github.com/Keats/after-dark/blob/master/screenshot.png?raw=true)
 
 ## Contents
 
