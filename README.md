@@ -22,6 +22,14 @@ and then enable it in your `config.toml`:
 theme = "after-dark"
 ```
 
+This theme requires your index section (`content/_index.md`) to be paginated to work:
+
+```toml
+paginate_by = 5
+```
+
+The posts should therefore be in directly under the `content` folder.
+
 ## Options
 
 ### Top-menu
