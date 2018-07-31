@@ -30,6 +30,19 @@ paginate_by = 5
 
 The posts should therefore be in directly under the `content` folder.
 
+The theme requires tags and categories taxonomies to be enabled in your `config.toml`:
+
+```toml
+taxonomies = [
+    # You can enable/disable RSS
+    {name = "categories", rss = true},
+    {name = "tags", rss = true},
+]
+```
+If you want to paginate taxonomies pages, you will need to overwrite the templates
+as it only works for non-paginated taxonomies by default.
+
+
 ## Options
 
 ### Top-menu
