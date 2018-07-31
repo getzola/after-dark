@@ -3,8 +3,10 @@ compile_sass = true
 title = "after-dark theme"
 description = ""
 
-generate_tags_pages = true
-generate_categories_pages = true
+taxonomies = [
+    {name = "categories", rss = true},
+    {name = "tags", rss = true},
+]
 
 [extra]
 author = "Vincent"

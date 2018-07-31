@@ -7,10 +7,10 @@
 
     <h1>Tags</h1>
 
-    {% if tags %}
+    {% if terms %}
         <ul>
-            {% for tag in tags %}
-                <li><a href="{{ tag.permalink }}">{{ tag.name }}</a> ({{ tag.pages | length }})</li>
+            {% for term in terms %}
+                <li><a href="{{ term.permalink }}">{{ term.name }}</a> ({{ term.pages | length }})</li>
             {% endfor %}
         </ul>
     {% endif %}
