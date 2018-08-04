@@ -7,11 +7,11 @@
 
     <h1>Categories</h1>
 
-    {% if categories %}
+    {% if terms %}
         <ul>
-            {% for category in categories %}
+            {% for term in terms %}
                 <li>
-                    <a href="{{ category.permalink }}">{{ category.name }}</a>({{ category.pages | length }})
+                    <a href="{{ term.permalink }}">{{ term.name }}</a>({{ term.pages | length }})
                 </li>
             {% endfor %}
         </ul>
