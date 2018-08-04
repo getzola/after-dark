@@ -3,6 +3,7 @@ description = "A robust, elegant dark theme"
 license = "MIT"
 homepage = "https://github.com/Keats/after-dark"
 min_version = "0.4.0"
+demo = "https://gutenberg-after-dark.netlify.com"
 
 [extra]
 
