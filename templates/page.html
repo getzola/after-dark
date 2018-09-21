@@ -3,6 +3,22 @@
 
 {% block content %}
 
+    {% block header %}
+	{% if config.extra.after_dark_menu %}
+	    <header>
+		<nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+		{% for item in config.extra.after_dark_menu %}
+		    <a itemprop="url"
+		       class="{% if item.url | replace(from="$BASE_URL", to=config.base_url) == current_url %}active{% endif %}"
+		       href="{{ item.url | safe | replace(from="$BASE_URL", to=config.base_url) }}">
+			<span itemprop="name">{{ item.name }}
+			</span></a>
+		{% endfor %}
+		</nav>
+	    </header>
+	{% endif %}
+    {% endblock header %}
+
 <article itemscope itemtype="http://schema.org/BlogPosting">
     <header>
         <h1 itemprop="headline">{{ page.title }}</h1>
@@ -21,12 +37,12 @@
                 {% endif %}
                 {% if page.taxonomies.categories %}
                     {% set category = page.taxonomies.categories[0] %}
-                    in <a href="{{ get_taxonomy_url(kind="categories", name=category) }}">{{ category }}</a>
+                    in <a href="{{ get_taxonomy_url(kind="categories", name=category) | safe }}">{{ category }}</a>
                 {% endif %}
                 {% if page.taxonomies.tags %}
                     and tagged
                     {% for tag in page.taxonomies.tags %}
-                        <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>
+                        <a href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}">{{ tag }}</a>
                         {% if page.taxonomies.tags | length > 1 %}
                             {% if loop.index != page.taxonomies.tags | length %}
                                 {% if loop.index == page.taxonomies.tags | length - 1 %}
