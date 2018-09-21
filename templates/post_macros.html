@@ -19,14 +19,14 @@
     <article itemscope itemtype="http://schema.org/CreativeWork">
         <header>
             <h2 itemprop="name">
-                <a href="{{ page.permalink }}">{{ page.title }}</a>
+                <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
             </h2>
             <span class="muted">{{ self::meta(page=page) }}</span>
         </header>
         {% if page.summary %}
             <div itemprop="summary">
                 {{ page.summary | safe }}
-                <nav class="readmore"><a itemprop="url" href="{{ page.permalink }}">Read More&nbsp;&raquo;</a></nav>
+                <nav class="readmore"><a itemprop="url" href="{{ page.permalink | safe }}">Read More&nbsp;&raquo;</a></nav>
             </div>
         {% endif %}
     </article>
