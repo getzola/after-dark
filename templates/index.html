@@ -12,11 +12,11 @@
       <title>{% block title %}{{ config.title }}{% endblock title %}</title>
 
       {% if config.generate_rss %}
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml") }}">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml") | safe }}">
       {% endif %}
 
       {% block css %}
-          <link rel="stylesheet" href="{{ get_url(path="site.css", trailing_slash=false) }}">
+          <link rel="stylesheet" href="{{ get_url(path="site.css", trailing_slash=false) | safe }}">
       {% endblock css %}
 
       {% block extra_head %}
@@ -32,7 +32,7 @@
                         {% for item in config.extra.after_dark_menu %}
                             <a itemprop="url"
                                class="{% if item.url | replace(from="$BASE_URL", to=config.base_url) == current_url %}active{% endif %}"
-                               href="{{ item.url | replace(from="$BASE_URL", to=config.base_url) }}">
+                               href="{{ item.url | safe | replace(from="$BASE_URL", to=config.base_url) }}">
                                 <span itemprop="name">{{ item.name }}
                                 </span></a>
                         {% endfor %}

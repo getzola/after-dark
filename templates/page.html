@@ -21,12 +21,12 @@
                 {% endif %}
                 {% if page.taxonomies.categories %}
                     {% set category = page.taxonomies.categories[0] %}
-                    in <a href="{{ get_taxonomy_url(kind="categories", name=category) }}">{{ category }}</a>
+                    in <a href="{{ get_taxonomy_url(kind="categories", name=category) | safe }}">{{ category }}</a>
                 {% endif %}
                 {% if page.taxonomies.tags %}
                     and tagged
                     {% for tag in page.taxonomies.tags %}
-                        <a href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>
+                        <a href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}">{{ tag }}</a>
                         {% if page.taxonomies.tags | length > 1 %}
                             {% if loop.index != page.taxonomies.tags | length %}
                                 {% if loop.index == page.taxonomies.tags | length - 1 %}
