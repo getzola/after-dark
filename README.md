@@ -1,6 +1,6 @@
 # after-dark
 
-![after-dark screenshot](https://github.com/Keats/after-dark/blob/master/screenshot.png?raw=true)
+![after-dark screenshot](https://github.com/getzola/after-dark/blob/master/screenshot.png?raw=true)
 
 ## Contents
 
@@ -14,7 +14,7 @@ First download this theme to your `themes` directory:
 
 ```bash
 $ cd themes
-$ git clone https://github.com/Keats/after-dark.git
+$ git clone https://github.com/getzola/after-dark.git
 ```
 and then enable it in your `config.toml`:
 

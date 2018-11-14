@@ -56,7 +56,7 @@
                     {% if paginator.previous %}
                       <a href="{{ paginator.previous }}">&laquo; Previous</a> |
                     {% endif %}
-                    <span>Page {{ paginator.current_index }} of {{ paginator.pagers | length }}</span>
+                    <span>Page {{ paginator.current_index }} of {{ paginator.number_pagers }}</span>
                     {% if paginator.next %}
                       | <a href="{{ paginator.next }}">Next &raquo;</a>
                     {% endif %}
