@@ -1,16 +1,16 @@
 name = "after-dark"
 description = "A robust, elegant dark theme"
 license = "MIT"
-homepage = "https://github.com/Keats/after-dark"
+homepage = "https://github.com/getzola/after-dark"
 min_version = "0.4.0"
-demo = "https://gutenberg-after-dark.netlify.com"
+demo = "https://zola-after-dark.netlify.com"
 
 [extra]
 
 
 [author]
 name = "Vincent Prouillet"
-homepage = "https://vincent.is"
+homepage = "https://www.vincentprouillet.com"
 
 [original]
 author =  "comfusion"
