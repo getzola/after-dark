@@ -66,4 +66,4 @@ element that the `title` field in the config represents, you can set the `after_
 instead.
 
 ## Original
-This template is based on the Hugo template https://github.com/comfusion/after-dark
+This template is based on the Hugo template https://git.habd.as/comfusion/after-dark
