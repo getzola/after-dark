@@ -2,6 +2,9 @@
 {% import "post_macros.html" as post_macros %}
 
 {% block content %}
+    {% block header %}
+        {{ super() }}
+    {% endblock header %}
 
 <article itemscope itemtype="http://schema.org/BlogPosting">
     <header>
