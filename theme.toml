@@ -2,7 +2,7 @@ name = "after-dark"
 description = "A robust, elegant dark theme"
 license = "MIT"
 homepage = "https://github.com/getzola/after-dark"
-min_version = "0.5.0"
+min_version = "0.11.0"
 demo = "https://zola-after-dark.netlify.com"
 
 [extra]

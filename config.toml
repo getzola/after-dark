@@ -2,6 +2,7 @@ base_url = "https://zola-after-dark.netlify.com"
 compile_sass = true
 title = "after-dark theme"
 description = ""
+generate_feed = true
 
 taxonomies = [
     {name = "categories", rss = true},
