@@ -12,7 +12,7 @@
       <title>{% block title %}{{ config.title }}{% endblock title %}</title>
 
       {% if config.generate_feed %}
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
+        <link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
       {% endif %}
 
       {% block css %}
