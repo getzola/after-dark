@@ -193,6 +193,10 @@ a:hover {
   padding: 0
 }
 
+.hack header + article {
+  margin-top: 20px;
+}
+
 .hack blockquote, .hack h1, .hack ol, .hack p, .hack ul {
   margin-top: 20px;
   margin-bottom: 20px
