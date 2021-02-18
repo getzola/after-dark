@@ -5,8 +5,8 @@ description = ""
 generate_feed = true
 
 taxonomies = [
-    {name = "categories", rss = true},
-    {name = "tags", rss = true},
+    {name = "categories", feed = true},
+    {name = "tags", feed = true},
 ]
 
 [extra]
