@@ -27,7 +27,8 @@
                     in <a href="{{ get_taxonomy_url(kind="categories", name=category) | safe }}">{{ category }}</a>
                 {% endif %}
                 {% if page.taxonomies.tags %}
-                    and tagged
+                    {% if page.taxonomies.categories %}and{% endif %}
+                    tagged
                     {% for tag in page.taxonomies.tags %}
                         <a href="{{ get_taxonomy_url(kind="tags", name=tag) | safe }}">{{ tag }}</a>
                         {% if page.taxonomies.tags | length > 1 %}
@@ -49,4 +50,3 @@
 </article>
 
 {% endblock content %}
-
