@@ -8,6 +8,7 @@
 - [Options](#options)
   - [Top menu](#top-menu)
   - [Title](#title)
+  - [Author](#author)
 
 ## Installation
 First download this theme to your `themes` directory:
@@ -64,6 +65,23 @@ site URL.
 The site title is shown on the homepage. As it might be different from the `<title>`
 element that the `title` field in the config represents, you can set the `after_dark_title`
 instead.
+
+### Author
+You can set this on a per page basis or in the config file.
+
+`config.toml`:
+```toml
+[extra]
+author = "John Smith"
+```
+In a page (wrap this in +++):
+```toml
+title = "..."
+date = 1970-01-01
+
+[extra]
+author = "John Smith"
+```
 
 ## Original
 This template is based on the Hugo template https://git.habd.as/comfusion/after-dark
