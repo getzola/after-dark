@@ -5,7 +5,7 @@
         {{ super() }}
     {% endblock header %}
 
-    <h1>Tags</h1>
+    <h1>{% if config.languages | length > 0 %}{{ trans(key="tags", lang=lang) }}{% else %}Tags{% endif %}</h1>
 
     {% if terms %}
         <ul>

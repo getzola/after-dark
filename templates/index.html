@@ -34,16 +34,38 @@
     </head>
 
     <body class="hack dark main container">
+        {% set lang_base_url = get_url(path="", lang=lang) %}
         {% block content %}
             {% block header %}
-                {% if config.extra.after_dark_menu %}
+                {% if config.extra.after_dark_menu or config.languages %}
                     <header>
                         <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
+                        {% if config.languages %}
+                            <div style="float: right">
+                            <!-- does not show the current language -->
+                            {% for key, value in config.languages %}
+                                {% set_global lang_url = value.translations.url | safe | replace(from="$BASE_URL", to=config.base_url) | replace(from="$LANG_BASE_URL", to=lang_base_url) %}
+                                <!-- check to see if the language has a translation of the current article -->
+                                {% if page %}
+                                    {%for ea_translation in page.translations%}
+                                        {%if ea_translation.lang == key%}
+                                            {% set_global lang_url = ea_translation.permalink %}
+                                        {%endif%}
+                                    {% endfor %}
+                                {% elif taxonomy.slug %}
+                                    {% set_global lang_url = value.translations.url ~ `/` ~  taxonomy.slug | safe | replace(from="$BASE_URL", to=config.base_url) | replace(from="$LANG_BASE_URL", to=lang_base_url) %}
+                                {% endif %}
+                                <a itemprop="url"
+                                   href="{{lang_url}}">
+                                    <span itemprop="name">{% if value.translations.trans_key %}{{ trans(key=value.translations.trans_key, lang=lang) }}{% else %}{{ value.translations.name }}{% endif %}</span></a>
+                            {% endfor %}
+                            </div>
+                        {% endif %}
                         {% for item in config.extra.after_dark_menu %}
                             <a itemprop="url"
-                               class="{% if item.url | replace(from="$BASE_URL", to=config.base_url) == current_url %}active{% endif %}"
-                               href="{{ item.url | safe | replace(from="$BASE_URL", to=config.base_url) | safe }}">
-                                <span itemprop="name">{{ item.name }}</span></a>
+                               class="{% if item.url | replace(from="$BASE_URL", to=config.base_url) | replace(from="$LANG_BASE_URL", to=lang_base_url) == current_url %}active{% endif %}"
+                               href="{{ item.url | safe | replace(from="$BASE_URL", to=config.base_url) | replace(from="$LANG_BASE_URL", to=lang_base_url) | safe }}">
+                                <span itemprop="name">{% if item.trans_key %}{{ trans(key=item.trans_key, lang=lang) }}{% else %}{{ item.name }}{% endif %}</span></a>
                         {% endfor %}
                         </nav>
                     </header>
