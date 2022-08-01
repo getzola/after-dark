@@ -33,8 +33,7 @@
                             <a itemprop="url"
                                class="{% if item.url | replace(from="$BASE_URL", to=config.base_url) == current_url %}active{% endif %}"
                                href="{{ item.url | safe | replace(from="$BASE_URL", to=config.base_url) }}">
-                                <span itemprop="name">{{ item.name }}
-                                </span></a>
+                                <span itemprop="name">{{ item.name }}</span></a>
                         {% endfor %}
                         </nav>
                     </header>
