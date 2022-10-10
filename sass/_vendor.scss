@@ -187,7 +187,7 @@ a:hover {
   line-height: 20px
 }
 
-.hack blockquote, .hack code, .hack footer, .hack h1, .hack h2, .hack h3, .hack h4, .hack h5, .hack h6, .hack header, .hack li, .hack ol, .hack p, .hack section, .hack ul {
+.hack blockquote, .hack code, .hack footer, .hack h1, .hack h2, .hack h3, .hack h4, .hack h5, .hack h6, .hack header, .hack li, .hack p, .hack section, .hack ul {
   float: none;
   margin: 0;
   padding: 0
@@ -253,8 +253,6 @@ a:hover {
 
 .hack li {
   position: relative;
-  display: block;
-  padding-left: 20px
 }
 
 .hack li:after {
@@ -265,15 +263,6 @@ a:hover {
 
 .hack ul > li:after {
   content: "-"
-}
-
-.hack ol {
-  counter-reset: a
-}
-
-.hack ol > li:after {
-  content: counter(a) ".";
-  counter-increment: a
 }
 
 .hack blockquote {
