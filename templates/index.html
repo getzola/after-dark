@@ -9,6 +9,12 @@
       <!-- Enable responsiveness on mobile devices-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    {% if page.description %}
+      <meta name="description" content="{{ page.description }}" />
+    {% elif config.description %}
+      <meta name="description" content="{{ config.description }}" />
+    {% endif %}
+
       <title>{% block title %}{{ config.title }}{% endblock title %}</title>
 
       {% if config.generate_feed %}
