@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://getzola.github.io/after-dark/</loc>
+    </url>
+    <url>
+        <loc>https://getzola.github.io/after-dark/categories/</loc>
+    </url>
+    <url>
+        <loc>https://getzola.github.io/after-dark/categories/hello-world/</loc>
+    </url>
+    <url>
+        <loc>https://getzola.github.io/after-dark/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://getzola.github.io/after-dark/some-article/</loc>
+        <lastmod>2017-09-24</lastmod>
+    </url>
+    <url>
+        <loc>https://getzola.github.io/after-dark/some-other-article/</loc>
+        <lastmod>2017-09-25</lastmod>
+    </url>
+    <url>
+        <loc>https://getzola.github.io/after-dark/tags/</loc>
+    </url>
+    <url>
+        <loc>https://getzola.github.io/after-dark/tags/other/</loc>
+    </url>
+    <url>
+        <loc>https://getzola.github.io/after-dark/tags/rust/</loc>
+    </url>
+    <url>
+        <loc>https://getzola.github.io/after-dark/tags/ssg/</loc>
+    </url>
+</urlset>

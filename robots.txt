@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://getzola.github.io/after-dark/sitemap.xml
