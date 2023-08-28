@@ -9,11 +9,33 @@ taxonomies = [
     {name = "tags", feed = true},
 ]
 
+[translations]
+tags = "Tags"
+categories = "Categories"
+url = "$BASE_URL"
+name = "eng"
+lang_kor = "Korean"
+
+[languages.kor]
+generate_feed = true
+
+taxonomies = [
+    {name = "categories", feed = true},
+    {name = "tags", feed = true},
+]
+
+[languages.kor.translations]
+tags = "태그"
+categories = "범주"
+url = "$BASE_URL/kor"
+name = "한국어"
+trans_key = "lang_kor"
+
 [extra]
 author = "Vincent"
 after_dark_menu = [
-    {url = "$BASE_URL", name = "Home"},
-    {url = "$BASE_URL/categories", name = "Categories"},
-    {url = "$BASE_URL/tags", name = "Tags"},
+    {url = "$LANG_BASE_URL", name = "Home"},
+    {url = "$LANG_BASE_URL/categories", trans_key = "categories"},
+    {url = "$LANG_BASE_URL/tags", trans_key = "tags"},
 ]
 after_dark_title = "My blog"
