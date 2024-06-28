@@ -2,7 +2,8 @@ base_url = "https://getzola.github.io/after-dark/"
 compile_sass = true
 title = "after-dark theme"
 description = "A robust, elegant dark theme"
-generate_feed = true
+generate_feeds = true
+feed_filenames = ["atom.xml", "rss.xml"]
 
 taxonomies = [
     {name = "categories", feed = true},
