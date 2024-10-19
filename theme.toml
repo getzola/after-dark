@@ -1,18 +1,17 @@
-name = "after-dark"
-description = "A robust, elegant dark theme"
+name = "after-after-dark"
+description = "A robuster, eleganter dark theme"
 license = "MIT"
-homepage = "https://github.com/getzola/after-dark"
-min_version = "0.17.0"
-demo = "https://getzola.github.io/after-dark/"
+homepage = "https://github.com/micahkepe/after-after-dark"
 
 [extra]
 
 
 [author]
-name = "Vincent Prouillet"
-homepage = "https://www.vincentprouillet.com"
+name = "Micah Kepe"
+homepage = "https://micahkepe.com"
+
 
 [original]
-author =  "comfusion"
-homepage = "https://git.habd.as/comfusion/after-dark/"
-repo = "https://git.habd.as/comfusion/after-dark/"
+author =  "Vincent Prouillet"
+homepage = "https://www.vincentprouillet.com"
+repo = "https://www.vincentprouillet.com"
