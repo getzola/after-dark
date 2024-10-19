@@ -1,24 +1,3 @@
-// Define base colors and fonts for light and dark themes
-:root {
-  --bg-primary: #f0f0f0; // Updated light theme background color
-  --border-color: #ccc; // Light theme border color
-  --code-font: 'Courier New', monospace; // Code font
-
-  // Define light theme specifics
-  --text-color: #333;
-  --label-background: white;
-}
-
-:root.dark {
-  --bg-primary: rgb(15, 20, 25); // Dark theme background color
-  --border-color: #333; // Dark theme border color
-
-  // Define dark theme specifics
-  --text-color: #f0f0f0;
-  --label-background: black;
-}
-
-
 // Define language colors map
 $language-colors: (
   "js": (#f7df1e, "JavaScript"),
@@ -49,11 +28,13 @@ $language-colors: (
   "r": (#198ce7, "R"),
   "dart": (#00d2b8, "Dart"),
   "elixir": (#6e4a7e, "Elixir"),
-  "clojure": (#5881d8, "Clojure")
+  "clojure": (#5881d8, "Clojure"),
+  "sql": (#ffcc00, "SQL"),
+  "bash": (#4eaa25, "Bash"),
 );
 
 
-// Mixin for base label style
+// Mixin for language label styles
 @mixin base-label-style($language) {
   $color-info: map-get($language-colors, $language);
   $bg-color: nth($color-info, 1);
@@ -61,46 +42,53 @@ $language-colors: (
 
   content: $label;
   background: $bg-color;
-  color: var(--text-color);
-  border-radius: 0 0 0.25rem 0.25rem;
+  color: #ffffff; // Ensure it is visible
+  border-radius: 0.25rem;
   font-size: 12px;
-  letter-spacing: 0.025rem;
-  padding: 0.1rem 0.5rem;
-  position: absolute;
-  right: 0.1rem;
-  top: 0;
-  margin-top: 0.1rem;
-  text-align: right;
+  padding: 0.2rem 0.5rem;
   text-transform: uppercase;
+  position: absolute;
+  top: 5px;
+  left: 5px; // Positioned at the top-left
+  z-index: 10; // Ensure it's above the code content
 }
 
-pre {
-  padding: 1em 2em;
-  /* Increase right padding to give more space for the button */
-  position: relative;
-  overflow: auto;
-  /* Ensure this does not hide the button */
+// Language label styles
+.code-label {
+  @each $language, $_ in $language-colors {
+    &.label-#{$language} {
+      @include base-label-style($language);
+    }
+  }
 }
 
+// Clipboard button styles
+.clipboard-button {
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 10;
+  background-color: transparent;
+  border: "##3D444D";
+  border-radius: 3px;
 
-// Dynamic styling for code blocks
-code {
-  background-color: var(--bg-primary);
-  padding: 0.1em 0.2em;
-  border-radius: 5px;
-  border: 1px solid var(--border-color);
-  font-family: var(--code-font);
+  svg {
+    fill: #9198A1; // Use the desired color
+    width: 16px;
+    height: 16px;
+  }
 }
 
+// Styling for pre blocks
 pre {
   background-color: var(--bg-primary) !important;
   border-radius: 5px;
   border: 1px solid var(--border-color);
   line-height: 1.4;
-  overflow-x: auto;
   padding: 1em;
-  /* Ensure padding is sufficient for icon visibility */
-  position: relative;
+  position: relative; // Make sure absolute elements like the label and button work
+  overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 
   code {
@@ -110,28 +98,17 @@ pre {
     padding: 0;
     border: none;
   }
-
-  // Apply the base label style and customize based on language
-  code[class*="language-"] {
-    @each $language, $_ in $language-colors {
-      &.language-#{$language}::before {
-        @include base-label-style($language);
-      }
-    }
-  }
 }
 
-.clipboard-button,
-.clipboard-button svg {
-  all: unset;
-  /* This resets all inherited properties */
-  cursor: pointer;
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-  z-index: 10;
-  background-color: transparent;
-  border: none;
-  fill: #ef5350;
-  /* Specific color for the icon */
+pre::-webkit-scrollbar {
+  height: 8px;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background-color: #3D444D;
+  border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-track {
+  background-color: #1E222A;
 }

@@ -73,6 +73,13 @@
                 </nav>
             </main>
         {% endblock content %}
+
+        <!-- optional scripts -->
+        {% block scripts %}
+          {% if config.extra.codeblock %}
+            <script src="{{ get_url(path='js/codeblock.js', trailing_slash=false) | safe }}"></script>
+          {% endif %}
+        {% endblock scripts %}
     </body>
 
 </html>
