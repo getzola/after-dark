@@ -1,4 +1,6 @@
-# after-dark
+# after-after-dark
+
+Customization of the [`after-dark`](https://github.com/getzola/after-dark) Zola theme.
 
 ![after-dark screenshot](https://github.com/getzola/after-dark/blob/master/screenshot.png?raw=true)
 
