@@ -10,7 +10,14 @@ Demo: https://micahkepe.com/blog/
 Lots of inspiration and code snippets taken from [`redux`](https://github.com/SeniorMars/redux)
 by [SeniorMars](https://github.com/SeniorMars). Go check out his theme and blog!
 
-![after-dark screenshot](https://github.com/getzola/after-dark/blob/master/screenshot.png?raw=true)
+![after-dark screenshot](screenshot.png)
+
+## Features
+
+- [x] Code Snippet Clipboards
+- [x] Latex Support
+- [ ] Light/Dark mode support
+- [ ] Search functionality
 
 ## Contents
 
@@ -19,6 +26,7 @@ by [SeniorMars](https://github.com/SeniorMars). Go check out his theme and blog!
   - [Top menu](#top-menu)
   - [Title](#title)
   - [Author](#author)
+  - [Code Snippets](#code-snippets)
 
 ## Installation
 
@@ -26,7 +34,7 @@ First download this theme to your `themes` directory:
 
 ```bash
 cd themes
-git clone https://github.com/getzola/after-dark.git
+git clone https://github.com/micahkepe/after-after-dark
 ```
 
 and then enable it in your `config.toml`:
@@ -101,10 +109,22 @@ date = 1970-01-01
 author = "John Smith"
 ```
 
-### Code Snippets [WIP]
+### Code Snippets
+
+Syntax Highlighting:
+
+```toml
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customized by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+highlight_theme = "one-dark"
+```
+
+Enhanced Codeblocks (Clipboard Support and Language Tags)
 
 ```toml
 [extra]
-# Whether to have a clipboard copy button in code blocks
-codeblock_clipboard = true
+codeblock = true
 ```
