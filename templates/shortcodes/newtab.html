@@ -1,5 +1,6 @@
-<div style="width: 100%; max-width: 100%; height: auto;">
-  {% set image = resize_image(path=src, width=width, height=height) %}
+<div style="width: 100%; max-width: {{ width | default(value=100) }}%; margin: 0 auto; text-align: center;">
+  {% set image = resize_image(path=src, width=width | default(value=1920), height=height | default(value=1080),
+  op="fit", format="auto", quality=75) %}
   <a href="{{ get_url(path=src) }}" target="_blank">
     <img src="{{ image.url }}" alt="{{ alt }}" style="width: 100%; height: auto;" />
   </a>
