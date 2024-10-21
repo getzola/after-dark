@@ -112,3 +112,15 @@ pre::-webkit-scrollbar-thumb {
 pre::-webkit-scrollbar-track {
   background-color: #1E222A;
 }
+
+a {
+  code:hover {
+    background-color: transparent;
+  }
+}
+
+
+code {
+  color: var(--text-color);
+  background-color: var(--bg-primary);
+}
