@@ -27,6 +27,7 @@ by [SeniorMars](https://github.com/SeniorMars). Go check out his theme and blog!
   - [Title](#title)
   - [Author](#author)
   - [Code Snippets](#code-snippets)
+  - [LaTex Support](#latex-support)
 
 ## Installation
 
@@ -129,9 +130,9 @@ Enhanced Codeblocks (Clipboard Support and Language Tags)
 codeblock = true
 ```
 
-### LaTex MathJax Support
+### LaTex Support
 
-To enable LaTeX support, set the following in your `config.toml`:
+To enable LaTeX support with MathJax, set the following in your `config.toml`:
 
 ```toml
 [extra]
