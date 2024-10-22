@@ -128,3 +128,12 @@ Enhanced Codeblocks (Clipboard Support and Language Tags)
 [extra]
 codeblock = true
 ```
+
+### LaTex MathJax Support
+
+To enable LaTeX support, set the following in your `config.toml`:
+
+```toml
+[extra]
+latex = true
+```

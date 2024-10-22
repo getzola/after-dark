@@ -21,3 +21,5 @@ after_dark_title = "My blog"
 # Nicer codeblocks with copy to clipboard 
 codeblock = true
 
+# Enable MathJax support
+latex = true
