@@ -1,7 +1,7 @@
 base_url = "https://getzola.github.io/after-dark/"
 compile_sass = true
 title = "after-dark theme"
-description = "A robust, elegant dark theme"
+description = "A robuster, eleganter dark theme"
 generate_feed = true
 
 taxonomies = [
@@ -9,8 +9,26 @@ taxonomies = [
     {name = "tags", feed = true},
 ]
 
+# When set to "true", a search index is built from the pages and section
+# content for `default_language`.
+build_search_index = true 
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customized by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+highlight_theme = "one-dark"
+
+[search]
+# Wether to produce the search index as a javascript file or as a JSON file
+# Accepted values:
+# - "elasticlunr_javascript", "elasticlunr_json"
+# - "fuse_javascript", "fuse_json"
+index_format = "elasticlunr_json"
+
 [extra]
-author = "Vincent"
+author = "Micah"
 after_dark_menu = [
     {url = "$BASE_URL", name = "Home"},
     {url = "$BASE_URL/categories", name = "Categories"},
@@ -23,3 +41,6 @@ codeblock = true
 
 # Enable MathJax support
 latex = true
+
+# Enable search bar 
+enable_search = true 

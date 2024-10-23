@@ -17,7 +17,7 @@ by [SeniorMars](https://github.com/SeniorMars). Go check out his theme and blog!
 - [x] Code Snippet Clipboards
 - [x] Latex Support
 - [ ] Light/Dark mode support
-- [ ] Search functionality
+- [x] Search functionality
 
 ## Contents
 
@@ -28,6 +28,7 @@ by [SeniorMars](https://github.com/SeniorMars). Go check out his theme and blog!
   - [Author](#author)
   - [Code Snippets](#code-snippets)
   - [LaTex Support](#latex-support)
+  - [Searchbar](#searchbar)
 
 ## Installation
 
@@ -137,4 +138,18 @@ To enable LaTeX support with MathJax, set the following in your `config.toml`:
 ```toml
 [extra]
 latex = true
+```
+
+### Searchbar
+
+To enable a searchbar at the top of the page navigation, set the following in your `config.toml`:
+
+```toml
+build_search_index = true
+
+[search]
+index_format = "elasticlunr_json"
+
+[extra]
+enable_search = true
 ```

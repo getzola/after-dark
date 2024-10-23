@@ -40,12 +40,23 @@
   {% block header %}
   {% if config.extra.after_dark_menu %}
   <header>
-    <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
-      {% for item in config.extra.after_dark_menu %}
-      <a itemprop="url" class="{% if item.url | replace(from='$BASE_URL', to=config.base_url)==current_url %}active{%
-        endif %}" href="{{ item.url | safe | replace(from='$BASE_URL', to=config.base_url) | safe }}">
-        <span itemprop="name">{{ item.name }}</span></a>
-      {% endfor %}
+    <nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="navbar">
+      <div class="nav-links">
+        {% for item in config.extra.after_dark_menu %}
+        <a itemprop="url"
+          class="{% if item.url | replace(from='$BASE_URL', to=config.base_url)==current_url %}active{% endif %}"
+          href="{{ item.url | safe | replace(from='$BASE_URL', to=config.base_url) | safe }}">
+          <span itemprop="name">{{ item.name }}</span></a>
+        {% endfor %}
+      </div>
+      {% if config.extra.enable_search %}
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Search...">
+        <div class="search-results">
+          <div class="search-results__items"></div>
+        </div>
+      </div>
+      {% endif %}
     </nav>
   </header>
   {% endif %}
@@ -82,6 +93,7 @@
   {% endif %}
 
   {% include "partials/latex.html" %}
+  {% include "partials/search.html" %}
 
   {% endblock scripts %}
 </body>

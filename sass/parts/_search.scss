@@ -1,0 +1,48 @@
+/* Flex container for the nav links and search bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Flex for the links section */
+.nav-links {
+  display: flex;
+  gap: 15px;
+  /* Adjust gap as needed */
+}
+
+/* Ensure search occupies a reasonable width */
+.search-container {
+  position: relative;
+  flex-grow: 1;
+  max-width: 300px;
+  margin-left: 15px;
+}
+
+#search {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 2px solid var(--search-border-color, #ddd);
+  background-color: var(--search-bg-color, #fff);
+  color: var(--text-color, #000);
+  outline: none;
+}
+
+.search-results {
+  display: none;
+  /* Initial state hidden */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid var(--search-border-color, #ddd);
+  border-radius: 4px;
+  background-color: var(--bg-primary, #fff);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
