@@ -12,23 +12,50 @@
   /* Adjust gap as needed */
 }
 
-/* Ensure search occupies a reasonable width */
+/* Search container styling */
 .search-container {
   position: relative;
   flex-grow: 1;
   max-width: 300px;
   margin-left: 15px;
+  display: flex;
+  align-items: center;
+  /* Align SVG and input vertically */
 }
 
+/* Style the magnifying glass SVG */
+.search-icon {
+  position: absolute;
+  left: 10px;
+  width: 24px;
+  height: 24px;
+  /* default gray */
+  stroke: var(--text-color, #757575);
+  /* Adjust icon color */
+  pointer-events: none;
+  /* Ensure the SVG doesn't block input interaction */
+  padding: 2.5px 0px;
+}
+
+/* Input field styling */
 #search {
   width: 100%;
-  padding: 10px;
-  font-size: 16px;
+  padding: 10px 10px 10px 40px;
+  /* Left padding for the icon */
+  font-size: 14px;
+  border: 1.5px solid transparent;
+  /* Remove border when not focused */
   border-radius: 4px;
-  border: 2px solid var(--search-border-color, #ddd);
   background-color: var(--search-bg-color, #fff);
   color: var(--text-color, #000);
   outline: none;
+  height: 35px;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif
+}
+
+/* Highlight border when the input is focused */
+#search:focus {
+  border: 1.5px solid var(--search-border-color, #ddd);
 }
 
 .search-results {
