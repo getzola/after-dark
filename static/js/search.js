@@ -148,14 +148,32 @@ function initSearch() {
   var currentTerm = "";
   var index;
 
-  var initIndex = async function () {
+  const initIndex = async function () {
     if (index === undefined) {
-      index = fetch("/search_index.en.json").then(async function (response) {
-        return await elasticlunr.Index.load(await response.json());
-      });
+      try {
+        // Try relative to the current path first
+        const indexPath = `${window.location.pathname.replace(/\/+$/, "")}/search_index.en.json`;
+        const response = await fetch(indexPath);
+
+        if (!response.ok) {
+          // If that fails, try from the root
+          const rootResponse = await fetch("/search_index.en.json");
+          if (!rootResponse.ok) {
+            throw new Error("Search index not found");
+          }
+          const data = await rootResponse.json();
+          index = Promise.resolve(elasticlunr.Index.load(data));
+        } else {
+          const data = await response.json();
+          index = Promise.resolve(elasticlunr.Index.load(data));
+        }
+      } catch (error) {
+        console.error("Error loading search index:", error);
+        throw error;
+      }
     }
-    let res = await index;
-    return res;
+
+    return await index;
   };
 
   $searchInput.addEventListener(

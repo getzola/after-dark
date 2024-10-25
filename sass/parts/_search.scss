@@ -1,26 +1,19 @@
-/* Flex container for the nav links and search bar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Flex for the links section */
-.nav-links {
-  display: flex;
-  gap: 15px;
-  /* Adjust gap as needed */
-}
-
 /* Search container styling */
 .search-container {
   position: relative;
   flex-grow: 1;
-  max-width: 300px;
+  max-width: 100%;
   margin-left: 15px;
+  margin-right: 15px;
   display: flex;
   align-items: center;
   /* Align SVG and input vertically */
+}
+
+@media only screen and (max-width: 30em) {
+  .search-container {
+    margin: 15px;
+  }
 }
 
 /* Style the magnifying glass SVG */

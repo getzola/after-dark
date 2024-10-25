@@ -48,6 +48,12 @@ footer {
   animation-delay: 0.15s;
 }
 
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 footer time[datetime$="M"]:before {
   content: "\2013\0020";
 }
@@ -55,6 +61,10 @@ footer time[datetime$="M"]:before {
 @media only screen and (max-width: 30em) {
   footer time[datetime$="M"] {
     display: none;
+  }
+
+  .nav-header {
+    flex-direction: column;
   }
 }
 
