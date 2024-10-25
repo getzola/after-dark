@@ -1,4 +1,4 @@
-base_url = "https://getzola.github.io/after-dark/"
+base_url = "https://getzola.github.io/after-dark"
 compile_sass = true
 title = "after-dark theme"
 description = "A robuster, eleganter dark theme"
@@ -21,20 +21,16 @@ highlight_code = true
 highlight_theme = "one-dark"
 
 [search]
-# Wether to produce the search index as a javascript file or as a JSON file
-# Accepted values:
-# - "elasticlunr_javascript", "elasticlunr_json"
-# - "fuse_javascript", "fuse_json"
 index_format = "elasticlunr_json"
 
 [extra]
-author = "Micah"
+author = "John Doe"
 after_dark_menu = [
     {url = "$BASE_URL", name = "Home"},
     {url = "$BASE_URL/categories", name = "Categories"},
     {url = "$BASE_URL/tags", name = "Tags"},
 ]
-after_dark_title = "My blog"
+after_dark_title = "My Blog"
 
 # Nicer codeblocks with copy to clipboard 
 codeblock = true
