@@ -148,32 +148,46 @@ function initSearch() {
   var currentTerm = "";
   var index;
 
-  const initIndex = async function () {
+  const initIndex = function () {
     if (index === undefined) {
-      try {
-        // Try relative to the current path first
-        const indexPath = `${window.location.pathname.replace(/\/+$/, "")}/search_index.en.json`;
-        const response = await fetch(indexPath);
+      // Get the base path by looking for the first path segment
+      const pathParts = window.location.pathname.split("/");
+      const basePath = pathParts[1] ? `/${pathParts[1]}` : "";
+      const indexPath = `${basePath}/search_index.en.json`;
 
-        if (!response.ok) {
-          // If that fails, try from the root
-          const rootResponse = await fetch("/search_index.en.json");
-          if (!rootResponse.ok) {
-            throw new Error("Search index not found");
+      // Try fetching the search index file from the base path
+      // and if that fails, try fetching it from the root path
+      index = fetch(indexPath)
+        .then((response) => {
+          if (!response.ok && response.status === 404) {
+            // If base path fails, try root path
+            return fetch("/search_index.en.json");
           }
-          const data = await rootResponse.json();
-          index = Promise.resolve(elasticlunr.Index.load(data));
-        } else {
-          const data = await response.json();
-          index = Promise.resolve(elasticlunr.Index.load(data));
-        }
-      } catch (error) {
-        console.error("Error loading search index:", error);
-        throw error;
-      }
+          return response;
+        })
+        .then((response) => {
+          if (!response.ok && response.status === 404) {
+            // If both paths fail
+            console.warn(
+              "Search index not found at either the base or root path.",
+            );
+            return null;
+          }
+          return response.json();
+        })
+        .then((data) => {
+          if (data) {
+            return elasticlunr.Index.load(data);
+          }
+          return null;
+        })
+        .catch((error) => {
+          console.error("Error loading search index:", error);
+          throw error;
+        });
     }
 
-    return await index;
+    return index;
   };
 
   $searchInput.addEventListener(
