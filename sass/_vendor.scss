@@ -339,6 +339,8 @@ a:hover {
 }
 
 .hack blockquote {
+  border-left: 0.15em solid var(--accent, #ff2e88);
+  font-style: italic;
   position: relative;
   padding-left: 17px;
   padding-left: 2ch;
@@ -346,8 +348,6 @@ a:hover {
 }
 
 .hack blockquote:after {
-  content: ">\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>";
-  white-space: pre;
   position: absolute;
   top: 0;
   left: 0;

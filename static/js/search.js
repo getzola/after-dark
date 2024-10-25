@@ -228,6 +228,15 @@ function initSearch() {
     }
   });
 
+  // event listener for `/` to move cursor to search input
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "/") {
+      // don't have input be `/`
+      e.preventDefault();
+      $searchInput.focus();
+    }
+  });
+
   // on enter event immediately display results
   $searchInput.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {

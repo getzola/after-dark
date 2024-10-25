@@ -27,3 +27,13 @@ Level up your posts with GIFs!
 
 $$ \sum\_{i=1}^{n} i = \frac{n(n+1)}{2} $$
 ")}}
+
+# YouTube Video Embedding
+
+{{ youtube(id="ym3y13nA3ew", width=80) }}
+
+# Audio File Embedding
+
+{{ audio(source="assets/audio.mp3")}}
+
+> If you're still falling for this, I don't know what to tell you.
