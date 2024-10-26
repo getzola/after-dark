@@ -1,6 +1,7 @@
 /* 
-This file defines the styles for the vendor libraries used in the theme.
-Meant for third-party outside libraries like Prism.js, Clipboard.js, and others.
+This file is for "vendor" styles that are not part of the main theme. This 
+means that they are not part of the main theme's design, but are included
+to provide a consistent experience across the site.
 */
 
 html {
@@ -16,7 +17,10 @@ body {
   font-size: 1rem;
   line-height: 1.5rem;
   margin: 0;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  font-family:
+    Menlo, Monaco, Lucida Console, Liberation Mono,
+    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
+    monospace, serif;
   word-wrap: break-word
 }
 
@@ -213,7 +217,9 @@ a:hover {
 .hack strong {
   font-size: 1rem;
   font-style: normal;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif
+  font-family:
+    Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace, serif
 }
 
 .hack blockquote,
@@ -344,7 +350,8 @@ a:hover {
   position: relative;
   padding-left: 17px;
   padding-left: 2ch;
-  overflow: hidden
+  overflow: hidden;
+  background-color: var(--bg-primary, #fff);
 }
 
 .hack blockquote:after {
@@ -516,7 +523,6 @@ table tbody td:first-child {
   height: 38px;
   line-height: 38px;
   padding: 0;
-  float: left;
   position: relative
 }
 
@@ -571,6 +577,7 @@ textarea.form-control {
 select.form-control {
   border-radius: 0;
   background-color: transparent;
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none
