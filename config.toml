@@ -1,6 +1,6 @@
 base_url = "https://getzola.github.io/after-dark"
 compile_sass = true
-title = "after-dark theme"
+title = "after-after-dark theme"
 description = "A robuster, eleganter dark theme"
 generate_feed = true
 
@@ -30,7 +30,7 @@ after_dark_menu = [
     {url = "$BASE_URL/categories", name = "Categories"},
     {url = "$BASE_URL/tags", name = "Tags"},
 ]
-after_dark_title = "My Blog"
+after_dark_title = "My Example Site"
 
 # Nicer codeblocks with copy to clipboard 
 codeblock = true
