@@ -346,12 +346,38 @@ a:hover {
 
 .hack blockquote {
   border-left: 0.15em solid var(--accent, #ff2e88);
-  font-style: italic;
+  border-top-right-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
   position: relative;
   padding-left: 17px;
   padding-left: 2ch;
+  padding-right: 2ch;
   overflow: hidden;
-  background-color: var(--bg-primary, #fff);
+  background-color: #5E667F;
+  color: #E8E6ED;
+  box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.1);
+
+  strong {
+    background: #ff2e88;
+    color: #FFFFFF;
+    padding: 0.1em 0.3em;
+    border-radius: 0.2em;
+  }
+
+  a {
+    color: #FFE4EE;
+    font-weight: normal;
+  }
+
+  a:hover {
+    color: #FFFFFF;
+  }
+
+  code {
+    background: var(--bg-primary);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+
+  }
 }
 
 .hack blockquote:after {
