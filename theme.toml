@@ -1,21 +1,18 @@
-name = "after-after-dark"
-description = "A robuster, eleganter dark theme"
+name = "after-dark"
+description = "A robust, elegant dark theme"
 license = "MIT"
-homepage = "https://github.com/micahkepe/after-after-dark"
-# The minimum version of Zola required
-min_version = "0.4.0"
-# An optional live demo URL
-demo = "https://micahkepe.com/blog/"
+homepage = "https://github.com/getzola/after-dark"
+min_version = "0.17.0"
+demo = "https://getzola.github.io/after-dark/"
 
-# Any variable that can be overridden in the end user `config.toml`
-# You don't need to prefix variables by the theme name but as this will
-# be merged with user data, some kind of prefix or nesting is preferable
-# Use snake_casing to be consistent with the rest of Zola
 [extra]
 
 
-# The theme author info
 [author]
-name = "Micah Kepe"
-homepage = "https://micahkepe.com"
+name = "Vincent Prouillet"
+homepage = "https://www.vincentprouillet.com"
 
+[original]
+author =  "comfusion"
+homepage = "https://git.habd.as/comfusion/after-dark/"
+repo = "https://git.habd.as/comfusion/after-dark/"

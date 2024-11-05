@@ -7,7 +7,7 @@ categories = ["demo"]
 tags = ["gif", "fancy"]
 +++
 
-"after-after-dark" comes with some handy shortcodes to make your life easier and
+"after-dark" comes with some handy shortcodes to make your life easier and
 your posts more exciting.
 
 <!-- more -->

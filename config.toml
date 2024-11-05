@@ -1,7 +1,7 @@
-base_url = "https://getzola.github.io/after-dark"
+base_url = "https://getzola.github.io/after-dark/"
 compile_sass = true
-title = "after-after-dark theme"
-description = "A robuster, eleganter dark theme"
+title = "after-dark theme"
+description = "A robust, elegant dark theme"
 generate_feed = true
 
 taxonomies = [

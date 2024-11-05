@@ -1,14 +1,4 @@
-# after-after-dark
-
-Enhancements to the [`after-dark`](https://github.com/getzola/after-dark) Zola
-theme originally developmed by Vincent Prouillet.
-
-Demo: https://micahkepe.com/blog/
-
-## Acknowledgements
-
-Lots of inspiration and code snippets taken from [`redux`](https://github.com/SeniorMars/redux)
-by [SeniorMars](https://github.com/SeniorMars). Go check out his theme and blog!
+# after-dark
 
 ![after-dark screenshot](screenshot.png)
 
@@ -36,13 +26,13 @@ First download this theme to your `themes` directory:
 
 ```bash
 cd themes
-git clone https://github.com/micahkepe/after-after-dark
+git clone https://github.com/getzola/after-dark.git
 ```
 
 and then enable it in your `config.toml`:
 
 ```toml
-theme = "after-after-dark"
+theme = "after-dark"
 ```
 
 This theme requires your index section (`content/_index.md`) to be paginated to work:
