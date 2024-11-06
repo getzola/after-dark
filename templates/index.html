@@ -2,77 +2,105 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-      <!-- Enable responsiveness on mobile devices-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
-    {% if page %}
-      {% if page.description %}
-      <meta name="description" content="{{ page.description }}" />
-      {% elif config.description %}
-      <meta name="description" content="{{ config.description }}" />
-      {% endif %}
-    {% elif config.description %}
-      <meta name="description" content="{{ config.description }}" />
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {% if page %}
+  {% if page.description %}
+  <meta name="description" content="{{ page.description }}" />
+  {% elif config.description %}
+  <meta name="description" content="{{ config.description }}" />
+  {% endif %}
+  {% elif config.description %}
+  <meta name="description" content="{{ config.description }}" />
+  {% endif %}
+
+  <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+
+  {% if config.generate_feed %}
+  <link rel="alternate" type={% if config.feed_filename=="atom.xml" %}"application/atom+xml"{% else
+    %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
+  {% endif %}
+
+  {% block css %}
+  <link rel="stylesheet" href="{{ get_url(path='site.css', trailing_slash=false) | safe }}">
+  {% endblock css %}
+
+  {% block extra_head %}
+  {% endblock extra_head %}
+</head>
+
+<body class="hack dark main container">
+  {% block content %}
+  {% block header %}
+  {% if config.extra.after_dark_menu %}
+  <header class="nav-header">
+    <nav itemscope itemtype="http://schema.org/SiteNavigationElement" class="navbar">
+      <div class="nav-links">
+        {% for item in config.extra.after_dark_menu %}
+        <a itemprop="url"
+          class="{% if item.url | replace(from='$BASE_URL', to=config.base_url)==current_url %}active{% endif %}"
+          href="{{ item.url | safe | replace(from='$BASE_URL', to=config.base_url) | safe }}">
+          <span itemprop="name">{{ item.name }}</span></a>
+        {% endfor %}
+      </div>
+    </nav>
+    {% if config.extra.enable_search %}
+    <div class="search-container">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="search-icon">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+      </svg>
+      <input type="text" id="search" placeholder="Search...">
+      <div class="search-results">
+        <div class="search-results__items"></div>
+      </div>
+    </div>
     {% endif %}
 
-      <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+  </header>
+  {% endif %}
+  {% endblock header %}
 
-      {% if config.generate_feed %}
-        <link rel="alternate" type={% if config.feed_filename == "atom.xml" %}"application/atom+xml"{% else %}"application/rss+xml"{% endif %} title="RSS" href="{{ get_url(path=config.feed_filename) | safe }}">
-      {% endif %}
+  <main>
+    {% if config.extra.after_dark_title %}
+    <header>
+      <h1>{{ config.extra.after_dark_title }}</h1>
+    </header>
+    {% endif %}
+    {% for page in paginator.pages %}
+    {{ post_macros::page_in_list(page=page) }}
+    {% endfor %}
 
-      {% block css %}
-          <link rel="stylesheet" href="{{ get_url(path="site.css", trailing_slash=false) | safe }}">
-      {% endblock css %}
+    <nav>
+      <p>
+        {% if paginator.previous %}
+        <a href="{{ paginator.previous }}">&laquo; Previous</a> |
+        {% endif %}
+        <span>Page {{ paginator.current_index }} of {{ paginator.number_pagers }}</span>
+        {% if paginator.next %}
+        | <a href="{{ paginator.next }}">Next &raquo;</a>
+        {% endif %}
+      </p>
+    </nav>
+  </main>
+  {% endblock content %}
 
-      {% block extra_head %}
-      {% endblock extra_head %}
-    </head>
+  <!-- optional scripts -->
+  {% block scripts %}
+  {% if config.extra.codeblock %}
+  <script src="{{ get_url(path='js/codeblock.js', trailing_slash=false) | safe }}"></script>
+  {% endif %}
 
-    <body class="hack dark main container">
-        {% block content %}
-            {% block header %}
-                {% if config.extra.after_dark_menu %}
-                    <header>
-                        <nav itemscope itemtype="http://schema.org/SiteNavigationElement">
-                        {% for item in config.extra.after_dark_menu %}
-                            <a itemprop="url"
-                               class="{% if item.url | replace(from="$BASE_URL", to=config.base_url) == current_url %}active{% endif %}"
-                               href="{{ item.url | safe | replace(from="$BASE_URL", to=config.base_url) | safe }}">
-                                <span itemprop="name">{{ item.name }}</span></a>
-                        {% endfor %}
-                        </nav>
-                    </header>
-                {% endif %}
-            {% endblock header %}
+  {% include "partials/latex.html" %}
+  {% include "partials/search.html" %}
 
-            <main>
-                {% if config.extra.after_dark_title %}
-                    <header>
-                        <h1>{{ config.extra.after_dark_title }}</h1>
-                    </header>
-                {% endif %}
-                {% for page in paginator.pages %}
-                    {{ post_macros::page_in_list(page=page) }}
-                {% endfor %}
-
-                <nav>
-                  <p>
-                    {% if paginator.previous %}
-                      <a href="{{ paginator.previous }}">&laquo; Previous</a> |
-                    {% endif %}
-                    <span>Page {{ paginator.current_index }} of {{ paginator.number_pagers }}</span>
-                    {% if paginator.next %}
-                      | <a href="{{ paginator.next }}">Next &raquo;</a>
-                    {% endif %}
-                  </p>
-                </nav>
-            </main>
-        {% endblock content %}
-    </body>
+  {% endblock scripts %}
+</body>
 
 </html>

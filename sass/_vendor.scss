@@ -1,3 +1,9 @@
+/* 
+This file is for "vendor" styles that are not part of the main theme. This 
+means that they are not part of the main theme's design, but are included
+to provide a consistent experience across the site.
+*/
+
 html {
   font-size: 12px
 }
@@ -11,11 +17,19 @@ body {
   font-size: 1rem;
   line-height: 1.5rem;
   margin: 0;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  font-family:
+    Menlo, Monaco, Lucida Console, Liberation Mono,
+    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New,
+    monospace, serif;
   word-wrap: break-word
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.3em
 }
 
@@ -33,7 +47,9 @@ pre {
   overflow: auto
 }
 
-code[class*=language-], pre[class*=language-], pre code {
+code[class*=language-],
+pre[class*=language-],
+pre code {
   font-weight: 100;
   text-shadow: none;
   margin: 1.75rem 0
@@ -124,42 +140,52 @@ a:hover {
     -ms-flex: 0 0 8.33333%;
     flex: 0 0 8.33333%
   }
+
   .cell.\-2of12 {
     -ms-flex: 0 0 16.66667%;
     flex: 0 0 16.66667%
   }
+
   .cell.\-3of12 {
     -ms-flex: 0 0 25%;
     flex: 0 0 25%
   }
+
   .cell.\-4of12 {
     -ms-flex: 0 0 33.33333%;
     flex: 0 0 33.33333%
   }
+
   .cell.\-5of12 {
     -ms-flex: 0 0 41.66667%;
     flex: 0 0 41.66667%
   }
+
   .cell.\-6of12 {
     -ms-flex: 0 0 50%;
     flex: 0 0 50%
   }
+
   .cell.\-7of12 {
     -ms-flex: 0 0 58.33333%;
     flex: 0 0 58.33333%
   }
+
   .cell.\-8of12 {
     -ms-flex: 0 0 66.66667%;
     flex: 0 0 66.66667%
   }
+
   .cell.\-9of12 {
     -ms-flex: 0 0 75%;
     flex: 0 0 75%
   }
+
   .cell.\-10of12 {
     -ms-flex: 0 0 83.33333%;
     flex: 0 0 83.33333%
   }
+
   .cell.\-11of12 {
     -ms-flex: 0 0 91.66667%;
     flex: 0 0 91.66667%
@@ -171,33 +197,67 @@ a:hover {
     -ms-flex-direction: column;
     flex-direction: column
   }
+
   .cell {
     -ms-flex: 0 0 auto;
     flex: 0 0 auto
   }
 }
 
-.hack, .hack blockquote, .hack code, .hack em, .hack h1, .hack h2, .hack h3, .hack h4, .hack h5, .hack h6, .hack strong {
+.hack,
+.hack blockquote,
+.hack code,
+.hack em,
+.hack h1,
+.hack h2,
+.hack h3,
+.hack h4,
+.hack h5,
+.hack h6,
+.hack strong {
   font-size: 1rem;
   font-style: normal;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif
+  font-family:
+    Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace, serif
 }
 
-.hack blockquote, .hack code, .hack em, .hack strong {
+.hack blockquote,
+.hack code,
+.hack em,
+.hack strong {
   line-height: 20px
 }
 
-.hack blockquote, .hack code, .hack footer, .hack h1, .hack h2, .hack h3, .hack h4, .hack h5, .hack h6, .hack header, .hack li, .hack ol, .hack p, .hack section, .hack ul {
+.hack blockquote,
+.hack code,
+.hack footer,
+.hack h1,
+.hack h2,
+.hack h3,
+.hack h4,
+.hack h5,
+.hack h6,
+.hack header,
+.hack li,
+.hack ol,
+.hack p,
+.hack section,
+.hack ul {
   float: none;
   margin: 0;
   padding: 0
 }
 
-.hack header + article {
+.hack header+article {
   margin-top: 20px;
 }
 
-.hack blockquote, .hack h1, .hack ol, .hack p, .hack ul {
+.hack blockquote,
+.hack h1,
+.hack ol,
+.hack p,
+.hack ul {
   margin-top: 20px;
   margin-bottom: 20px
 }
@@ -218,16 +278,24 @@ a:hover {
   left: 0
 }
 
-.hack h1 + * {
+.hack h1+* {
   margin-top: 0
 }
 
-.hack h2, .hack h3, .hack h4, .hack h5, .hack h6 {
+.hack h2,
+.hack h3,
+.hack h4,
+.hack h5,
+.hack h6 {
   position: relative;
   margin-bottom: 1.75rem
 }
 
-.hack h2:before, .hack h3:before, .hack h4:before, .hack h5:before, .hack h6:before {
+.hack h2:before,
+.hack h3:before,
+.hack h4:before,
+.hack h5:before,
+.hack h6:before {
   display: inline
 }
 
@@ -263,7 +331,7 @@ a:hover {
   left: 0
 }
 
-.hack ul > li:after {
+.hack ul>li:after {
   content: "-"
 }
 
@@ -271,33 +339,62 @@ a:hover {
   counter-reset: a
 }
 
-.hack ol > li:after {
+.hack ol>li:after {
   content: counter(a) ".";
   counter-increment: a
 }
 
 .hack blockquote {
+  border-left: 0.15em solid var(--accent, #ff2e88);
+  border-top-right-radius: 0.2em;
+  border-bottom-right-radius: 0.2em;
   position: relative;
   padding-left: 17px;
   padding-left: 2ch;
-  overflow: hidden
+  padding-right: 2ch;
+  overflow: hidden;
+  background-color: #5E667F;
+  color: #E8E6ED;
+  box-shadow: inset -3px -3px 5px rgba(0, 0, 0, 0.1);
+
+  strong {
+    background: #ff2e88;
+    color: #FFFFFF;
+    padding: 0.1em 0.3em;
+    border-radius: 0.2em;
+  }
+
+  a {
+    color: #FFE4EE;
+    font-weight: normal;
+  }
+
+  a:hover {
+    color: #FFFFFF;
+  }
+
+  code {
+    background: var(--bg-primary);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+
+  }
 }
 
 .hack blockquote:after {
-  content: ">\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>";
-  white-space: pre;
   position: absolute;
   top: 0;
   left: 0;
   line-height: 20px
 }
 
-.hack em:after, .hack em:before {
+.hack em:after,
+.hack em:before {
   content: "*";
   display: inline
 }
 
-.hack pre code:after, .hack pre code:before {
+.hack pre code:after,
+.hack pre code:before {
   content: none
 }
 
@@ -305,7 +402,8 @@ a:hover {
   font-weight: 700
 }
 
-.hack code:after, .hack code:before {
+.hack code:after,
+.hack code:before {
   content: "`";
   display: inline
 }
@@ -334,7 +432,7 @@ a:hover {
   }
 }
 
-.hack-ones ol > li:after {
+.hack-ones ol>li:after {
   content: "1."
 }
 
@@ -346,7 +444,8 @@ p {
   max-width: 70rem
 }
 
-.container, .container-fluid {
+.container,
+.container-fluid {
   margin: 0 auto;
   padding: 0 1rem
 }
@@ -416,7 +515,8 @@ table {
   color: #778087
 }
 
-table td, table th {
+table td,
+table th {
   vertical-align: top;
   border: 1px solid #ccc;
   line-height: 15px;
@@ -449,7 +549,6 @@ table tbody td:first-child {
   height: 38px;
   line-height: 38px;
   padding: 0;
-  float: left;
   position: relative
 }
 
@@ -504,6 +603,7 @@ textarea.form-control {
 select.form-control {
   border-radius: 0;
   background-color: transparent;
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none
@@ -547,7 +647,8 @@ select.form-control {
   background-color: transparent
 }
 
-.btn.btn-ghost:focus, .btn.btn-ghost:hover {
+.btn.btn-ghost:focus,
+.btn.btn-ghost:hover {
   border-color: #424242;
   color: #424242;
   z-index: 2
@@ -570,7 +671,8 @@ select.form-control {
   color: #333
 }
 
-.btn-default:focus:not(.btn-ghost), .btn-default:hover {
+.btn-default:focus:not(.btn-ghost),
+.btn-default:hover {
   background-color: #dcdcdc;
   border-color: #dcdcdc
 }
@@ -581,7 +683,8 @@ select.form-control {
   border: 1px solid #4caf50
 }
 
-.btn-success:focus:not(.btn-ghost), .btn-success:hover {
+.btn-success:focus:not(.btn-ghost),
+.btn-success:hover {
   background-color: #43a047;
   border-color: #43a047
 }
@@ -591,7 +694,8 @@ select.form-control {
   color: #4caf50
 }
 
-.btn-success.btn-ghost:focus, .btn-success.btn-ghost:hover {
+.btn-success.btn-ghost:focus,
+.btn-success.btn-ghost:hover {
   border-color: #388e3c;
   color: #388e3c;
   z-index: 2
@@ -603,7 +707,8 @@ select.form-control {
   border: 1px solid #f44336
 }
 
-.btn-error:focus:not(.btn-ghost), .btn-error:hover {
+.btn-error:focus:not(.btn-ghost),
+.btn-error:hover {
   background-color: #e53935;
   border-color: #e53935
 }
@@ -613,7 +718,8 @@ select.form-control {
   color: #f44336
 }
 
-.btn-error.btn-ghost:focus, .btn-error.btn-ghost:hover {
+.btn-error.btn-ghost:focus,
+.btn-error.btn-ghost:hover {
   border-color: #d32f2f;
   color: #d32f2f;
   z-index: 2
@@ -625,7 +731,8 @@ select.form-control {
   border: 1px solid #ff9800
 }
 
-.btn-warning:focus:not(.btn-ghost), .btn-warning:hover {
+.btn-warning:focus:not(.btn-ghost),
+.btn-warning:hover {
   background-color: #fb8c00;
   border-color: #fb8c00
 }
@@ -635,7 +742,8 @@ select.form-control {
   color: #ff9800
 }
 
-.btn-warning.btn-ghost:focus, .btn-warning.btn-ghost:hover {
+.btn-warning.btn-ghost:focus,
+.btn-warning.btn-ghost:hover {
   border-color: #f57c00;
   color: #f57c00;
   z-index: 2
@@ -647,7 +755,8 @@ select.form-control {
   border: 1px solid #00bcd4
 }
 
-.btn-info:focus:not(.btn-ghost), .btn-info:hover {
+.btn-info:focus:not(.btn-ghost),
+.btn-info:hover {
   background-color: #00acc1;
   border-color: #00acc1
 }
@@ -657,7 +766,8 @@ select.form-control {
   color: #00bcd4
 }
 
-.btn-info.btn-ghost:focus, .btn-info.btn-ghost:hover {
+.btn-info.btn-ghost:focus,
+.btn-info.btn-ghost:hover {
   border-color: #0097a7;
   color: #0097a7;
   z-index: 2
@@ -669,7 +779,8 @@ select.form-control {
   border: 1px solid #2196f3
 }
 
-.btn-primary:focus:not(.btn-ghost), .btn-primary:hover {
+.btn-primary:focus:not(.btn-ghost),
+.btn-primary:hover {
   background-color: #1e88e5;
   border-color: #1e88e5
 }
@@ -679,7 +790,8 @@ select.form-control {
   color: #2196f3
 }
 
-.btn-primary.btn-ghost:focus, .btn-primary.btn-ghost:hover {
+.btn-primary.btn-ghost:focus,
+.btn-primary.btn-ghost:hover {
   border-color: #1976d2;
   color: #1976d2;
   z-index: 2
@@ -743,7 +855,8 @@ select.form-control {
   padding-right: 1rem
 }
 
-.media-left, .media-right {
+.media-left,
+.media-right {
   display: table-cell;
   vertical-align: top
 }
@@ -766,7 +879,8 @@ select.form-control {
   margin-top: .3rem
 }
 
-.avatarholder, .placeholder {
+.avatarholder,
+.placeholder {
   background-color: #f0f0f0;
   text-align: center;
   color: #b9b9b9;
@@ -818,6 +932,7 @@ select.form-control {
   0% {
     transform: rotate(0deg)
   }
+
   to {
     transform: rotate(1turn)
   }
@@ -833,7 +948,8 @@ select.form-control {
   border-color: #616161
 }
 
-.menu .menu-item.active, .menu .menu-item:hover {
+.menu .menu-item.active,
+.menu .menu-item:hover {
   color: #000;
   border-color: #000;
   background-color: transparent
@@ -845,16 +961,20 @@ select.form-control {
     border-bottom: none;
     width: 100%
   }
+
   .form-group.form-textarea label:after {
     display: none
   }
+
   .form-control {
     width: 100%
   }
+
   textarea.form-control {
     border-left: none;
     padding: .5rem 0
   }
+
   pre::-webkit-scrollbar {
     height: 3px
   }
@@ -870,7 +990,8 @@ select.form-control {
   color: #ccc
 }
 
-.dark, .dark pre {
+.dark,
+.dark pre {
   background-color: #000
 }
 
@@ -883,11 +1004,16 @@ select.form-control {
   color: #00bcd4
 }
 
-.dark h1 a, .dark h2 a, .dark h3 a, .dark h4 a, .dark h5 a {
+.dark h1 a,
+.dark h2 a,
+.dark h3 a,
+.dark h4 a,
+.dark h5 a {
   color: #ccc
 }
 
-.dark code, .dark strong {
+.dark code,
+.dark strong {
   color: #fff
 }
 
@@ -899,7 +1025,8 @@ select.form-control {
   color: #ccc
 }
 
-.dark table td, .dark table th {
+.dark table td,
+.dark table th {
   border-color: #444
 }
 
@@ -945,43 +1072,51 @@ select.form-control {
   color: #ababab
 }
 
-.dark .btn.btn-ghost.btn-default:focus, .dark .btn.btn-ghost.btn-default:hover {
+.dark .btn.btn-ghost.btn-default:focus,
+.dark .btn.btn-ghost.btn-default:hover {
   border-color: #9c9c9c;
   color: #9c9c9c;
   z-index: 1
 }
 
-.dark .btn.btn-ghost.btn-default:focus, .dark .btn.btn-ghost.btn-default:hover {
+.dark .btn.btn-ghost.btn-default:focus,
+.dark .btn.btn-ghost.btn-default:hover {
   border-color: #e0e0e0;
   color: #e0e0e0
 }
 
-.dark .btn.btn-ghost.btn-primary:focus, .dark .btn.btn-ghost.btn-primary:hover {
+.dark .btn.btn-ghost.btn-primary:focus,
+.dark .btn.btn-ghost.btn-primary:hover {
   border-color: #64b5f6;
   color: #64b5f6
 }
 
-.dark .btn.btn-ghost.btn-success:focus, .dark .btn.btn-ghost.btn-success:hover {
+.dark .btn.btn-ghost.btn-success:focus,
+.dark .btn.btn-ghost.btn-success:hover {
   border-color: #81c784;
   color: #81c784
 }
 
-.dark .btn.btn-ghost.btn-info:focus, .dark .btn.btn-ghost.btn-info:hover {
+.dark .btn.btn-ghost.btn-info:focus,
+.dark .btn.btn-ghost.btn-info:hover {
   border-color: #4dd0e1;
   color: #4dd0e1
 }
 
-.dark .btn.btn-ghost.btn-error:focus, .dark .btn.btn-ghost.btn-error:hover {
+.dark .btn.btn-ghost.btn-error:focus,
+.dark .btn.btn-ghost.btn-error:hover {
   border-color: #e57373;
   color: #e57373
 }
 
-.dark .btn.btn-ghost.btn-warning:focus, .dark .btn.btn-ghost.btn-warning:hover {
+.dark .btn.btn-ghost.btn-warning:focus,
+.dark .btn.btn-ghost.btn-warning:hover {
   border-color: #ffb74d;
   color: #ffb74d
 }
 
-.dark .avatarholder, .dark .placeholder {
+.dark .avatarholder,
+.dark .placeholder {
   background-color: transparent;
   border-color: #333
 }
@@ -991,7 +1126,8 @@ select.form-control {
   border-color: rgba(95, 95, 95, .78)
 }
 
-.dark .menu .menu-item.active, .dark .menu .menu-item:hover {
+.dark .menu .menu-item.active,
+.dark .menu .menu-item:hover {
   color: #fff;
   border-color: #ccc
 }

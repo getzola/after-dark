@@ -9,11 +9,34 @@ taxonomies = [
     {name = "tags", feed = true},
 ]
 
+# When set to "true", a search index is built from the pages and section
+# content for `default_language`.
+build_search_index = true 
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customized by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+highlight_theme = "one-dark"
+
+[search]
+index_format = "elasticlunr_json"
+
 [extra]
-author = "Vincent"
+author = "John Doe"
 after_dark_menu = [
     {url = "$BASE_URL", name = "Home"},
     {url = "$BASE_URL/categories", name = "Categories"},
     {url = "$BASE_URL/tags", name = "Tags"},
 ]
-after_dark_title = "My blog"
+after_dark_title = "My Example Site"
+
+# Nicer codeblocks with copy to clipboard 
+codeblock = true
+
+# Enable MathJax support
+latex = true
+
+# Enable search bar 
+enable_search = true 
