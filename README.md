@@ -116,6 +116,8 @@ highlight_theme = "one-dark"
 
 Enhanced Codeblocks (Clipboard Support and Language Tags)
 
+To enable enhanced codeblocks, set the following in your `config.toml`:
+
 ```toml
 [extra]
 codeblock = true
